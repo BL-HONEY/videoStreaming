@@ -2,10 +2,9 @@
   <div class>
     <div class>
       <md-toolbar style="background:#403a3a" class="md-medium md-toolbar-offset">
-                  <md-avatar class="md-avatar-icon md-large">
-
-        <img class="logo" src="../assets/images.png" />
-                </md-avatar>
+        <md-avatar class="md-avatar-icon md-large">
+          <img class="logo" src="../assets/images.png" />
+        </md-avatar>
 
         <h3 class="md-title title" style="flex: 1; color: white;
  ">Video Streaming</h3>
@@ -40,7 +39,9 @@
 <script>
 import VideoPlayer from "./VideoPlayer";
 import TestVideo from "../assets/test2.mp4";
- import TestVideo2 from "../assets/test.mp4"
+import TestVideo2 from "../assets/test.mp4";
+import { HTTP } from "../services/httpService";
+
 export default {
   components: {
     VideoPlayer
@@ -71,7 +72,7 @@ export default {
                 id: 7,
                 name: "src",
                 children: [
-                  { id: 8, name: "index", video: TestVideo},
+                  { id: 8, name: "index", video: TestVideo },
                   { id: 9, name: "bootstrap", video: TestVideo2 }
                 ]
               }
@@ -125,8 +126,7 @@ export default {
   methods: {
     test(item) {
       this.$log.info("data at 94: ", item.video);
-      if(item.video)
-      this.video = item.video;
+      if (item.video) this.video = item.video;
     }
   }
 };
@@ -143,10 +143,9 @@ export default {
   font-size: 18px;
   letter-spacing: 0.08em;
   /* background: #352d2d; */
- /* color: white; */
- cursor: pointer;
+  /* color: white; */
+  cursor: pointer;
 }
-
 
 .logo {
   height: 33px;
